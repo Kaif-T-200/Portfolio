@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaif Tarasgar - Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #64ffda;
+            --text: #ccd6f6;
+            --text-light: #8892b0;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .hero h2 {
+            font-size: 28px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .skill-category {
+            background-color: var(--secondary);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li::before {
+            content: '▹';
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .experience-item {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .company {
+            font-size: 22px;
+            color: var(--accent);
+        }
+        
+        .date {
+            color: var(--text-light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .certification-card {
+            background-color: var(--secondary);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certification-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .certification-issuer {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        .button-group {
+    display: flex;
+    gap: 15px; /* adjust the gap as needed */
+}
+        .contact-icon {
+            font-size: 24px;
+            color: var(--accent);
+            margin-right: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--secondary);
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero h2 {
+                font-size: 22px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KT</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                    <li><a href="#get_in_touch">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kaif Tarasgar</h1>
+                <h2>Cybersecurity Student & Ethical Hacker</h2>
+                <p>I'm a cybersecurity student passionate about digital security, ethical hacking, and creating secure, user-friendly solutions. Currently pursuing a BSc in Cybersecurity at Pimpri Chinchwad University with extensive hands-on experience in various cybersecurity domains.</p>
+                <div class="button-group">
+        <a href="#get_in_touch" class="btn">Get In Touch</a>
+        <a href="resume.html" class="btn" target="_blank">Resume</a>
+    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p>I am a motivated B.Sc. Cybersecurity student at Pimpri Chinchwad University with a strong foundation in programming, front-end development, and ethical hacking.</p>
+                    <p>My hands-on experience includes internships and simulations in cloud security, risk assessment, data analytics, and cybersecurity management. I'm passionate about enhancing digital security, solving technological challenges, and contributing to a safer online ecosystem.</p>
+                    <p>I aim to strengthen my expertise in ethical hacking and cybersecurity while refining my abilities in front-end development to create seamless and secure digital experiences.</p>
+                </div>
+                <div>
+                    <h3>Education</h3>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="company">Pimpri Chinchwad University</span>
+                            <span class="date">2024-2027</span>
+                        </div>
+                        <p>Bachelor of Science (B.Sc.) in Cyber Security & Forensics</p>
+                        <p>Focus: Cyber Security, Ethical Hacking, Programming, Network Security, Hands-on Learning</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li>Zero Trust Framework</li>
+                        <li>Risk Assessment</li>
+                        <li>Threat Analysis</li>
+                        <li>Penetration Testing</li>
+                        <li>Network Security</li>
+                        <li>Ethical Hacking</li>
+                        <li>Vulnerability Assessment</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul class="skill-list">
+                        <li>Burp Suite</li>
+                        <li>Linux</li>
+                        <li>Wireshark</li>
+                        <li>Metasploit</li>
+                        <li>Nmap</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML/CSS/JavaScript</li>
+                        <li>Python</li>
+                        <li>Frontend Development</li>
+                        <li>React.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Other</h3>
+                    <ul class="skill-list">
+                        <li>Networking</li>
+                        <li>Data Visualization</li>
+                        <li>Forensic Technology</li>
+                        <li>Scripting</li>
+                        <li>Cloud Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">CodSoft</span>
+                        <span class="date">Aug 2025 - Present</span>
+                    </div>
+                    <p><strong>Python Programmer Intern</strong></p>
+                    <p>Working on Python programming projects and developing software solutions.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">VaultorCodes</span>
+                        <span class="date">Aug 2025 - Present</span>
+                    </div>
+                    <p><strong>Python Developer Intern</strong></p>
+                    <p>Developing Python-based applications and solutions.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">Prodigy InfoTech</span>
+                        <span class="date">Jul 2025 - Aug 2025</span>
+                    </div>
+                    <p><strong>Cyber Security Intern</strong></p>
+                    <p>Gained practical experience in cybersecurity principles and practices.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">Deloitte</span>
+                        
+                    </div>
+                    <p><strong>Data Analytics & Cyber Job Simulation Internship</strong></p>
+                    <p>Gained skills in data analysis, forensic technology, and deriving actionable insights for addressing complex challenges. Performed risk assessments and implemented defensive strategies against cyber threats.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">Zscaler</span>
+                        <span class="date">Jan 2025 - Mar 2025</span>
+                    </div>
+                    <p><strong>Zero Trust Cloud Security Virtual Intern</strong></p>
+                    <p>Implemented Zero Trust security frameworks for securing cloud environments, enhancing understanding of advanced cloud security strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Packet-Scope</h3>
+                        <p>A real-time network packet analyzer that captures, inspects, and visualizes traffic. Features include payload type detection, geolocation mapping, protocol statistics, and malicious IP alert system.</p>
+                        <p><strong>Technologies:</strong> Python</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Pixel-Image-Encryptor</h3>
+                        <p>A lightweight, browser-based tool to encrypt or decrypt images using a custom key. All processing happens securely on the device with no installations required.</p>
+                        <p><strong>Technologies:</strong> CSS, JavaScript</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Password-Security-Center</h3>
+                        <p>Advanced password generator & analyzer with zxcvbn scoring, breach check (HIBP), and custom word mixing.</p>
+                        <p><strong>Technologies:</strong> JavaScript</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Keylogger</h3>
+                        <p>A simple keylogger tool built in Python using the pynput library. Created for educational and ethical hacking practice.</p>
+                        <p><strong>Technologies:</strong> Python</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Caesar-Cipher</h3>
+                        <p>GUI-based Caesar Cipher tool built with Python and Tkinter. Easily encrypt, decrypt, load, and save messages with a simple interface.</p>
+                        <p><strong>Technologies:</strong> Python, Tkinter</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Flashcard Application</h3>
+                        <p>A fun and interactive flashcard project built using HTML, CSS, and JavaScript. Includes card flipping animations, shuffle sounds, and a simple way to add new questions.</p>
+                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Gift Idea Generator</h3>
+                        <p>A tool for generating personalized gift suggestions based on recipient, occasion, budget, and interests. Features dynamic filtering and diverse categories.</p>
+                        <p><strong>Technologies:</strong> Python</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3 class="certification-title">CS406: Information Security</h3>
+                    <p class="certification-issuer">Saylor Academy • Aug 2025</p>
+                    <p>Skills: Information Security, Cybersecurity, Cryptography</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Cyber Security Associate Certification Programme</h3>
+                    <p class="certification-issuer">Skill India Digital Hub • Aug 2025</p>
+                    <p>Skills: Cybersecurity</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Cyber Security Masterclass</h3>
+                    <p class="certification-issuer">Infosec Train • Aug 2025</p>
+                    <p>Skills: Ethical Hacking, Cybersecurity</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+                    <p class="certification-issuer">Oracle • Aug 2025</p>
+                    <p>Skills: Artificial Intelligence (AI)</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Palo Alto Networks Academy Security Operations Fundamentals</h3>
+                    <p class="certification-issuer">Palo Alto Networks • Aug 2025</p>
+                    <p>Skills: Security Operations Center, SIEM, SOAR, Log Analysis & Correlation</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">SQL Injection Attacks</h3>
+                    <p class="certification-issuer">EC-Council • Aug 2025</p>
+                    <p>Skills: SQL Injection, Cybersecurity Tools</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Certified Ethical Hacker (CEH) v.12</h3>
+                    <p class="certification-issuer">Packt • Jun 2025</p>
+                    <p>Skills: Cybersecurity, Ethical Hacking</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Introduction to Cybersecurity</h3>
+                    <p class="certification-issuer">Cisco • Jun 2025</p>
+                    <p>Skills: Cybersecurity</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">AWS Cloud Practitioner Essentials</h3>
+                    <p class="certification-issuer">Amazon Web Services • Jun 2025</p>
+                    <p>Skills: Cloud Computing</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; text-align: center;">
+    <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/details/certifications/" class="btn" target="_blank" rel="noopener noreferrer">
+        View All Certifications
+    </a>
+</p>
+        </div>
+    </section>
+
+<section id="connect">
+    <div class="container">
+        <h2 class="section-title">Connect</h2>
+        <div class="contact-info" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+            </a>
+
+            <!-- Twitter/X Card -->
+            <a href="https://x.com/Kaif_T_200" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3>Twitter/X</h3>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #e6f0ff; /* light accent on hover */
+}
+
+.contact-icon i {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #0077b5; /* default LinkedIn color; can change per platform */
+}
+
+.contact-card h3 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+</style>
+
+<section id="get_in_touch">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <form action="mailto:kaiftarasgar2005@gmail.com" method="post" enctype="text/plain" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="Name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<style>
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #112240;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: #ccd6f6; /* only input area color */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0077b5; /* LinkedIn blue or choose your accent */
+}
+
+.btn-submit {
+    display: block;             /* make the button block-level for centering */
+    margin: 20px auto 0 auto;   /* center horizontally with top margin */
+    width: 200px;               /* optional fixed width for balance */
+    background-color: #0077b5;  /* original color */
+    color: #fff;                 /* text color */
+    border: none;
+    padding: 12px 0;             /* vertical padding only for uniform width */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #005582;  /* darker shade on hover */
+    transform: translateY(-2px); /* subtle lift effect */
+}
+
+
+</style>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kaif Tarasgar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
