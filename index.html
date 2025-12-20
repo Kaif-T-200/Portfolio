@@ -125,12 +125,6 @@
             transform: translateY(-3px);
         }
         
-        /* Remove the special CV button style */
-        .btn-cv {
-            background-color: transparent !important;
-            border-color: var(--accent) !important;
-        }
-        
         .section-title {
             font-size: 36px;
             margin-bottom: 50px;
@@ -308,6 +302,52 @@
             margin-top: 50px;
         }
         
+        /* Connect section styling */
+        .connect-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .connect-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            background-color: var(--secondary);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            border: 1px solid transparent;
+        }
+        
+        .connect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-color: var(--accent);
+            background-color: rgba(100, 255, 218, 0.05);
+        }
+        
+        .connect-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        
+        .connect-card h3 {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+            color: var(--text);
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 40px;
@@ -333,6 +373,15 @@
             .button-group .btn {
                 width: 100%;
                 text-align: center;
+            }
+            
+            .connect-grid {
+                gap: 20px;
+            }
+            
+            .connect-card {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -369,9 +418,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Rest of your HTML remains exactly the same... -->
-    <!-- The code below is identical to your original except for the hero section above -->
 
     <section id="about">
         <div class="container">
@@ -452,6 +498,46 @@
             <div class="experience-list">
                 <div class="experience-item">
                     <div class="experience-header">
+                        <span class="company">ShadowFox</span>
+                        <span class="date">Sep 2025 - Oct 2025</span>
+                    </div>
+                    <p><strong>Cyber Security Intern</strong></p>
+                    <p>Completed MSME and ISO 9001 certified advanced cybersecurity internship with real-time lab challenges. Performed penetration testing, vulnerability assessment, and network security analysis on production systems. Applied ethical hacking techniques including password cracking, hash analysis, and exploitation frameworks.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">AICTE - Palo Alto Networks</span>
+                        <span class="date">Jul 2025 - Sep 2025</span>
+                    </div>
+                    <p><strong>Palo Alto Cybersecurity Virtual Intern</strong></p>
+                    <p>Completed 10-week program focused on network security, threat prevention, and firewall configuration. Gained hands-on experience with Palo Alto Networks security tools, SIEM platforms, and SOC operations. Developed understanding of enterprise security infrastructure and risk assessment methodologies.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">EduSkills Foundation (AICTE)</span>
+                        <span class="date">Apr 2025 - Jun 2025</span>
+                    </div>
+                    <p><strong>Ethical Hacking Virtual Intern</strong></p>
+                    <p>Completed 10-week program covering SQL Injection, XSS, CSRF, and web application security testing. Gained hands-on experience with Nmap, Metasploit, Wireshark, and Burp Suite for penetration testing. Performed reconnaissance, vulnerability scanning, and exploitation on authorized target systems.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">Zscaler</span>
+                        <span class="date">Jan 2025 - Mar 2025</span>
+                    </div>
+                    <p><strong>Zero Trust Cloud Security Virtual Intern</strong></p>
+                    <p>Implemented Zero Trust security frameworks for securing cloud environments and remote access. Enhanced understanding of Zscaler Zero Trust Exchange and cloud security posture management. Applied identity and access management principles to strengthen organizational security posture.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">Prodigy InfoTech</span>
+                        <span class="date">Jul 2025 - Aug 2025</span>
+                    </div>
+                    <p><strong>Cyber Security Intern</strong></p>
+                    <p>Conducted security assessments and vulnerability analysis on web applications and network systems. Developed Python and JavaScript scripts for security testing automation and log analysis.</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
                         <span class="company">CodSoft</span>
                         <span class="date">Aug 2025 - Present</span>
                     </div>
@@ -465,29 +551,6 @@
                     </div>
                     <p><strong>Python Developer Intern</strong></p>
                     <p>Developing Python-based applications and solutions.</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <span class="company">Prodigy InfoTech</span>
-                        <span class="date">Jul 2025 - Aug 2025</span>
-                    </div>
-                    <p><strong>Cyber Security Intern</strong></p>
-                    <p>Gained practical experience in cybersecurity principles and practices.</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <span class="company">Deloitte</span>
-                    </div>
-                    <p><strong>Data Analytics & Cyber Job Simulation Internship</strong></p>
-                    <p>Gained skills in data analysis, forensic technology, and deriving actionable insights for addressing complex challenges. Performed risk assessments and implemented defensive strategies against cyber threats.</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <span class="company">Zscaler</span>
-                        <span class="date">Jan 2025 - Mar 2025</span>
-                    </div>
-                    <p><strong>Zero Trust Cloud Security Virtual Intern</strong></p>
-                    <p>Implemented Zero Trust security frameworks for securing cloud environments, enhancing understanding of advanced cloud security strategies.</p>
                 </div>
             </div>
         </div>
@@ -555,49 +618,49 @@
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-grid">
                 <div class="certification-card">
-                    <h3 class="certification-title">CS406: Information Security</h3>
-                    <p class="certification-issuer">Saylor Academy • Aug 2025</p>
-                    <p>Skills: Information Security, Cybersecurity, Cryptography</p>
+                    <h3 class="certification-title">Google Cybersecurity Professional</h3>
+                    <p class="certification-issuer">Google • Sep 2025</p>
+                    <p>Skills: Cybersecurity, Security Operations, Threat Analysis</p>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Cyber Security Associate Certification Programme</h3>
-                    <p class="certification-issuer">Skill India Digital Hub • Aug 2025</p>
-                    <p>Skills: Cybersecurity</p>
+                    <h3 class="certification-title">Certified Ethical Hacker (CEH) v12</h3>
+                    <p class="certification-issuer">Coursera/Packt • Jun 2025</p>
+                    <p>Skills: Ethical Hacking, Penetration Testing</p>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Cyber Security Masterclass</h3>
-                    <p class="certification-issuer">Infosec Train • Aug 2025</p>
-                    <p>Skills: Ethical Hacking, Cybersecurity</p>
+                    <h3 class="certification-title">CompTIA Security+ (SY0-701)</h3>
+                    <p class="certification-issuer">Coursera • Sep 2025</p>
+                    <p>Skills: Network Security, Risk Management</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">CompTIA PenTest+ (PT0-002)</h3>
+                    <p class="certification-issuer">Coursera • Sep 2025</p>
+                    <p>Skills: Penetration Testing, Vulnerability Assessment</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Microsoft Cybersecurity Analyst</h3>
+                    <p class="certification-issuer">Microsoft • Sep 2025</p>
+                    <p>Skills: Cybersecurity Analysis, Microsoft Security Tools</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Microsoft Azure Security Tools Specialization</h3>
+                    <p class="certification-issuer">Microsoft • Oct 2025</p>
+                    <p>Skills: Azure Security, Cloud Security</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Palo Alto Networks Security Operations Fundamentals</h3>
+                    <p class="certification-issuer">Palo Alto Networks • Aug 2025</p>
+                    <p>Skills: Security Operations Center, SIEM, SOAR</p>
                 </div>
                 <div class="certification-card">
                     <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
                     <p class="certification-issuer">Oracle • Aug 2025</p>
-                    <p>Skills: Artificial Intelligence (AI)</p>
+                    <p>Skills: Artificial Intelligence (AI), Cloud Computing</p>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Palo Alto Networks Academy Security Operations Fundamentals</h3>
-                    <p class="certification-issuer">Palo Alto Networks • Aug 2025</p>
-                    <p>Skills: Security Operations Center, SIEM, SOAR, Log Analysis & Correlation</p>
-                </div>
-                <div class="certification-card">
-                    <h3 class="certification-title">SQL Injection Attacks</h3>
-                    <p class="certification-issuer">EC-Council • Aug 2025</p>
-                    <p>Skills: SQL Injection, Cybersecurity Tools</p>
-                </div>
-                <div class="certification-card">
-                    <h3 class="certification-title">Certified Ethical Hacker (CEH) v.12</h3>
-                    <p class="certification-issuer">Packt • Jun 2025</p>
-                    <p>Skills: Cybersecurity, Ethical Hacking</p>
-                </div>
-                <div class="certification-card">
-                    <h3 class="certification-title">Introduction to Cybersecurity</h3>
-                    <p class="certification-issuer">Cisco • Jun 2025</p>
-                    <p>Skills: Cybersecurity</p>
-                </div>
-                <div class="certification-card">
-                    <h3 class="certification-title">AWS Cloud Practitioner Essentials</h3>
-                    <p class="certification-issuer">Amazon Web Services • Jun 2025</p>
-                    <p>Skills: Cloud Computing</p>
+                    <h3 class="certification-title">Red Hat OpenShift Applications (DO101)</h3>
+                    <p class="certification-issuer">Red Hat • Oct 2025</p>
+                    <p>Skills: Container Orchestration, OpenShift</p>
                 </div>
             </div>
             <p style="margin-top: 30px; text-align: center;">
@@ -611,26 +674,26 @@
     <section id="connect">
         <div class="container">
             <h2 class="section-title">Connect</h2>
-            <div class="contact-info" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div class="connect-grid">
                 <!-- LinkedIn Card -->
-                <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-icon">
+                <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/" target="_blank" rel="noopener noreferrer" class="connect-card">
+                    <div class="connect-icon">
                         <i class="fab fa-linkedin"></i>
                     </div>
                     <h3>LinkedIn</h3>
                 </a>
 
                 <!-- GitHub Card -->
-                <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-icon">
+                <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener noreferrer" class="connect-card">
+                    <div class="connect-icon">
                         <i class="fab fa-github"></i>
                     </div>
                     <h3>GitHub</h3>
                 </a>
 
                 <!-- Twitter/X Card -->
-                <a href="https://x.com/Kaif_T_200" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-icon">
+                <a href="https://x.com/Kaif_T_200" target="_blank" rel="noopener noreferrer" class="connect-card">
+                    <div class="connect-icon">
                         <i class="fab fa-twitter"></i>
                     </div>
                     <h3>Twitter/X</h3>
@@ -638,41 +701,6 @@
             </div>
         </div>
     </section>
-
-    <style>
-        .contact-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 140px;
-            height: 140px;
-            background-color: #f7f7f7;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #000;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            background-color: #e6f0ff;
-        }
-
-        .contact-icon i {
-            font-size: 36px;
-            margin-bottom: 12px;
-            color: #0077b5;
-        }
-
-        .contact-card h3 {
-            margin: 0;
-            font-size: 18px;
-            text-align: center;
-        }
-    </style>
 
     <section id="get_in_touch">
         <div class="container">
