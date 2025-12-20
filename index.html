@@ -125,6 +125,12 @@
             transform: translateY(-3px);
         }
         
+        /* Remove the special CV button style */
+        .btn-cv {
+            background-color: transparent !important;
+            border-color: var(--accent) !important;
+        }
+        
         .section-title {
             font-size: 36px;
             margin-bottom: 50px;
@@ -282,10 +288,13 @@
             display: flex;
             align-items: center;
         }
+        
         .button-group {
-    display: flex;
-    gap: 15px; /* adjust the gap as needed */
-}
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
         .contact-icon {
             font-size: 24px;
             color: var(--accent);
@@ -315,6 +324,16 @@
             .nav-links {
                 display: none;
             }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .button-group .btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -343,12 +362,16 @@
                 <h2>Cybersecurity Student & Ethical Hacker</h2>
                 <p>I'm a cybersecurity student passionate about digital security, ethical hacking, and creating secure, user-friendly solutions. Currently pursuing a BSc in Cybersecurity at Pimpri Chinchwad University with extensive hands-on experience in various cybersecurity domains.</p>
                 <div class="button-group">
-        <a href="#get_in_touch" class="btn">Get In Touch</a>
-        <a href="Kaif Tarasgar - Cybersecurity Resume.pdf" class="btn" target="_blank">Resume</a>
-    </div>
+                    <a href="#get_in_touch" class="btn">Get In Touch</a>
+                    <a href="Kaif Tarasgar - Cybersecurity Resume.pdf" class="btn" target="_blank">Resume</a>
+                    <a href="Kaif Tarasgar - Cybersecurity CV.pdf" class="btn" target="_blank">CV</a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Rest of your HTML remains exactly the same... -->
+    <!-- The code below is identical to your original except for the hero section above -->
 
     <section id="about">
         <div class="container">
@@ -369,7 +392,6 @@
                         <p>Bachelor of Science (B.Sc.) in Cyber Security & Forensics</p>
                         <p>Focus: Cyber Security, Ethical Hacking, Programming, Network Security, Hands-on Learning</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -455,7 +477,6 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <span class="company">Deloitte</span>
-                        
                     </div>
                     <p><strong>Data Analytics & Cyber Job Simulation Internship</strong></p>
                     <p>Gained skills in data analysis, forensic technology, and deriving actionable insights for addressing complex challenges. Performed risk assessments and implemented defensive strategies against cyber threats.</p>
@@ -580,165 +601,161 @@
                 </div>
             </div>
             <p style="margin-top: 30px; text-align: center;">
-    <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/details/certifications/" class="btn" target="_blank" rel="noopener noreferrer">
-        View All Certifications
-    </a>
-</p>
+                <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/details/certifications/" class="btn" target="_blank" rel="noopener noreferrer">
+                    View All Certifications
+                </a>
+            </p>
         </div>
     </section>
 
-<section id="connect">
-    <div class="container">
-        <h2 class="section-title">Connect</h2>
-        <div class="contact-info" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <section id="connect">
+        <div class="container">
+            <h2 class="section-title">Connect</h2>
+            <div class="contact-info" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- LinkedIn Card -->
+                <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                </a>
 
-            <!-- LinkedIn Card -->
-            <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3>LinkedIn</h3>
-            </a>
+                <!-- GitHub Card -->
+                <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                </a>
 
-            <!-- GitHub Card -->
-            <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>GitHub</h3>
-            </a>
-
-            <!-- Twitter/X Card -->
-            <a href="https://x.com/Kaif_T_200" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                <h3>Twitter/X</h3>
-            </a>
-
+                <!-- Twitter/X Card -->
+                <a href="https://x.com/Kaif_T_200" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter/X</h3>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-.contact-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 140px;
-    height: 140px;
-    background-color: #f7f7f7;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #000;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    <style>
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            background-color: #f7f7f7;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    background-color: #e6f0ff; /* light accent on hover */
-}
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            background-color: #e6f0ff;
+        }
 
-.contact-icon i {
-    font-size: 36px;
-    margin-bottom: 12px;
-    color: #0077b5; /* default LinkedIn color; can change per platform */
-}
+        .contact-icon i {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: #0077b5;
+        }
 
-.contact-card h3 {
-    margin: 0;
-    font-size: 18px;
-    text-align: center;
-}
-</style>
+        .contact-card h3 {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
 
-<section id="get_in_touch">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <form action="mailto:kaiftarasgar2005@gmail.com" method="post" enctype="text/plain" class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="Name" placeholder="Your Name" required>
-            </div>
+    <section id="get_in_touch">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form action="mailto:kaiftarasgar2005@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" placeholder="Your Email" required>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" placeholder="Your Email" required>
+                </div>
 
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="Message" placeholder="Your Message" rows="5" required></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
 
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-    </div>
-</section>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<style>
-.contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #112240;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #112240;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
 
-.form-group label {
-    margin-bottom: 6px;
-    font-weight: bold;
-}
+        .form-group label {
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
 
-.form-group input,
-.form-group textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-    background-color: #ccd6f6; /* only input area color */
-}
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+            background-color: #ccd6f6;
+        }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #0077b5; /* LinkedIn blue or choose your accent */
-}
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #0077b5;
+        }
 
-.btn-submit {
-    display: block;             /* make the button block-level for centering */
-    margin: 20px auto 0 auto;   /* center horizontally with top margin */
-    width: 200px;               /* optional fixed width for balance */
-    background-color: #0077b5;  /* original color */
-    color: #fff;                 /* text color */
-    border: none;
-    padding: 12px 0;             /* vertical padding only for uniform width */
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
+        .btn-submit {
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 200px;
+            background-color: #0077b5;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
 
-.btn-submit:hover {
-    background-color: #005582;  /* darker shade on hover */
-    transform: translateY(-2px); /* subtle lift effect */
-}
-
-
-</style>
+        .btn-submit:hover {
+            background-color: #005582;
+            transform: translateY(-2px);
+        }
+    </style>
 
     <footer>
         <div class="container">
@@ -746,8 +763,4 @@
         </div>
     </footer>
 </body>
-
 </html>
-
-
-
