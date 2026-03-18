@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaif_Tarasgar_Cybersecurity_CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <base target="_blank">
+    <style>
+        :root {
+            --primary: #0f172a;/* Deep Slate */
+            --primary-light: #1e293b;
+            --accent: #2563eb;/* Professional Blue */
+            --accent-soft: #dbeafe;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --sidebar-width: 260px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.35;
+            -webkit-font-smoothing: antialiased;
+            font-size: 13px;
+        }
+
+        /* A4 Page Setup - Forced Single Page */
+        .cv-wrapper {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: var(--bg-card);
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--primary);
+            color: white;
+            padding: 30px 20px;
+            flex-shrink: 0;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-initials {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), #4f46e5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-initials img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .profile-tagline {
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(148, 163, 184, 0.2);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 11.5px;
+        }
+
+        .contact-item i {
+            width: 16px;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .skill-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .skill-group {
+            font-size: 11.5px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar-container {
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .language-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11.5px;
+        }
+
+        .lang-dots {
+            color: var(--accent);
+            letter-spacing: 2px;
+        }
+
+        .cert-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .cert-item {
+            font-size: 10.5px;
+            color: #cbd5e1;
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .cert-item::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 10px;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex: 1;
+            padding: 35px 40px;
+            background: white;
+        }
+
+        .summary-container {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: var(--bg-page);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .summary-text {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .summary-text strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .content-section {
+            margin-bottom: 25px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        .section-header i {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: -15px;
+            width: 1.5px;
+            background-color: var(--border);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -3.5px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 1.5px solid white;
+            box-shadow: 0 0 0 1.5px var(--accent-soft);
+            z-index: 1;
+        }
+
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--primary);
+        }
+
+        .item-date {
+            font-size: 10px;
+            font-weight: 600;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 1px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .item-org {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .item-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            font-size: 12.5px;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 14px;
+            top: -2px;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--primary);
+        }
+
+        .project-tag {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            font-size: 10px;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .highlight-card {
+            background: #f8fafc;
+            border: 1px dashed var(--accent);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            font-size: 12.5px;
+        }
+
+        .badge-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary);
+            background: white;
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Print Specifics - Aggressive Lockdown */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            html, body {
+                height: 100% !important;
+                height: 297mm !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .cv-wrapper { 
+                margin: 0 !important; 
+                box-shadow: none !important; 
+                width: 210mm !important;
+                height: 297mm !important;
+                border: none !important;
+                overflow: hidden !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+            }
+            .no-print { display: none !important; }
+            
+            /* Safety Scaling for Edge Cases */
+            body > * {
+                transform: scale(0.99);
+                transform-origin: top center;
+            }
+        }
+
+        /* Floating Action Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            border: none;
+            z-index: 1000;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1);
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        /* Responsive Scaling for Screen View */
+        @media screen and (max-width: 220mm) {
+            .cv-wrapper {
+                transform: scale(calc(100vw / 230mm));
+                transform-origin: top center;
+                margin: 0 auto !important;
+            }
+            body {
+                overflow-x: hidden;
+            }
+        }
+    </style>
+
+    <button class="print-btn no-print" onclick="window.print()" title="Download PDF">
+        <i class="fas fa-file-pdf"></i>
+    </button>
+
+    <div class="cv-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-header">
+                <div class="profile-initials">
+                    <img src="professional.jpeg" alt="Kaif Tarasgar">
+                </div>
+                <h1 class="profile-name">KAIF TARASGAR</h1>
+                <p class="profile-tagline">Cybersecurity Professional</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contact</h3>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <a href="tel:+919823453379" target="_blank" title="Call Kaif" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9823453379</span>
+                        </a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="mailto:kaiftarasgar2005@gmail.com" target="_blank" title="Email Kaif" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-envelope"></i>
+                            <span>kaiftarasgar2005@gmail.com</span>
+                        </a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Pune, Maharashtra, India</span>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326" target="_blank" rel="noopener" title="Open LinkedIn in new tab" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://github.com/Kaif-T-200" target="_blank" rel="noopener" title="Open GitHub in new tab" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://kaif-t-200.github.io/Portfolio/" target="_blank" rel="noopener" title="Open Portfolio in new tab" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-globe"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://medium.com/@Kaif-T-200" target="_blank" rel="noopener" title="Open Medium in new tab" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                            <i class="fab fa-medium"></i>
+                            <span>Medium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Core Skills</h3>
+                <div class="skill-grid">
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>Penetration Testing</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>Web App Security</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>Network Security</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>Python Development</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>Cloud Security</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-label">
+                            <span>OSINT & CTI</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Languages</h3>
+                <div class="language-list">
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="lang-dots">•••••</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Hindi</span>
+                        <span class="lang-dots">•••••</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Marathi</span>
+                        <span class="lang-dots">•••••</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Expert Certifications</h3>
+                <div class="cert-list">
+                    <div class="cert-item">Google Cybersecurity Pro</div>
+                    <div class="cert-item">CISSP Specialization</div>
+                    <div class="cert-item">CEH v12</div>
+                    <div class="cert-item">CompTIA Security+</div>
+                    <div class="cert-item">CompTIA PenTest+</div>
+                    <div class="cert-item">Microsoft Azure Security</div>
+                    <div class="cert-item">CRTO</div>
+                    <div class="cert-item">CRPO (98%)</div>
+                    <div class="cert-item">
+                        <a href="https://www.linkedin.com/in/kaif-tarasgar-0b5425326/details/certifications/" target="_blank" rel="noopener" title="View all certifications on LinkedIn" style="color: var(--accent); opacity: 0.9; font-style: italic; text-decoration: none;">
+                            +20 more professional certs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="summary-container">
+                <p class="summary-text">
+                    <strong>Cybersecurity student and Technical Lead</strong> at CREST Cybersecurity Club with hands-on experience in <strong>ethical hacking, bug bounty hunting, and CTF challenge development</strong>. Awarded responsible disclosure certificates from <strong>Perfios and Sai Life Sciences</strong>. Completed <strong>6+ industry internships</strong> with Google Cybersecurity Professional, CISSP Specialization, CEH v12, and CompTIA certifications.
+                </p>
+            </div>
+
+            <!-- Education -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">BSc in Cyber Security and Forensics</h4>
+                            <span class="item-date">Aug 2024 - Apr 2027</span>
+                        </div>
+                        <p class="item-org">Pimpri Chinchwad University, Pune</p>
+                        <p class="item-desc">Focus: Network Security, Ethical Hacking, Digital Forensics, Incident Response</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leadership -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-users"></i>
+                    <h2>Leadership & Community</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">Technical Lead</h4>
+                            <span class="item-date">Current</span>
+                        </div>
+                        <p class="item-org">CREST Cybersecurity Club, Pimpri Chinchwad University</p>
+                        <ul class="bullet-list">
+                            <li>Leading technical initiatives and cybersecurity awareness for 100+ members</li>
+                            <li>Hosted Feb 2026 CTF with advanced challenge design</li>
+                            <li>Created complex CTF challenges that remained unsolved by top teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Professional Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">Cyber Security Intern</h4>
+                            <span class="item-date">Mar 2026 - Present</span>
+                        </div>
+                        <p class="item-org">CyberWarLab</p>
+                        <ul class="bullet-list">
+                            <li>Working on advanced penetration testing and vulnerability research</li>
+                            <li>Applying offensive security and red team methodologies</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">Cyber Security & Ethical Hacking Virtual Intern</h4>
+                            <span class="item-date">Jan - Mar 2026</span>
+                        </div>
+                        <p class="item-org">Cryptonic Area</p>
+                        <ul class="bullet-list">
+                            <li>Completed 1-month intensive program; Letter of Rec from CEO</li>
+                            <li>Conducted vulnerability assessments and penetration tests</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">Web Exploit Hunting & Bug Bounty Intern</h4>
+                            <span class="item-date">Oct - Dec 2025</span>
+                        </div>
+                        <p class="item-org">EduSkills Academy (AICTE)</p>
+                        <ul class="bullet-list">
+                            <li>Ranked Outstanding (O) in 10-week offensive security internship</li>
+                            <li>Developed expertise in vulnerability discovery and PoC development</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="item-meta">
+                            <h4 class="item-title">Cyber Security Intern (Advanced Level)</h4>
+                            <span class="item-date">Sep - Oct 2025</span>
+                        </div>
+                        <p class="item-org">ShadowFox</p>
+                        <ul class="bullet-list">
+                            <li>Completed MSME/ISO certified program with real-time lab challenges</li>
+                            <li>Performed penetration testing, cracking, and hash analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-code"></i>
+                    <h2>Featured Projects</h2>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4 class="project-name">CipherX Pro v4.2.0</h4>
+                            <span class="project-tag">AI Decoding Engine</span>
+                        </div>
+                        <p class="project-desc">Built recursive multi-layer decoding engine supporting 73+ operations with sub-10ms latency. Features parallel processing and LRU caching.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Asyncio</span>
+                            <span class="tech-tag">AI Engine</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4 class="project-name">PCAP-StoryTeller</h4>
+                            <span class="project-tag">Network Forensics</span>
+                        </div>
+                        <p class="project-desc">Transforms raw PCAP files into interactive attack storyboards with threat detection, attack graphs, and automated forensic reports.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Network Analysis</span>
+                            <span class="tech-tag">Forensics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bug Bounty -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-shield-halved"></i>
+                    <h2>Responsible Disclosure</h2>
+                </div>
+                <div class="highlight-card">
+                    <strong>Perfios (Mar 2026):</strong> Certificate of Appreciation for responsible vulnerability disclosure through Bug Bounty Program.
+                </div>
+                <div class="highlight-card">
+                    <strong>Sai Life Sciences Ltd (Mar 2026):</strong> Identified security issue (P5 severity) via Com Olho RDP.
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="content-section">
+                <div class="section-header">
+                    <i class="fas fa-award"></i>
+                    <h2>CTF & Achievements</h2>
+                </div>
+                <div class="badge-cloud">
+                    <span class="badge">ISEA ISAP CTF (IIT Madras)</span>
+                    <span class="badge">SYNAPSE 2025</span>
+                    <span class="badge">H7CTF 2025</span>
+                    <span class="badge">Chaitanya CTF</span>
+                    <span class="badge">ZERODAY CTF</span>
+                    <span class="badge">Digital CyberHunt</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Auto-print dialog to encourage PDF saving
+        window.onload = function() {
+            setTimeout(() => {
+                // Only auto-print if not already in print mode
+                if (!window.matchMedia('print').matches) {
+                    window.print();
+                }
+            }, 100); // Reduced delay from 1000ms to 100ms
+        };
+    </script>
+</body>
+</html>
