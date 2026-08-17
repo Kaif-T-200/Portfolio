@@ -81,4 +81,4 @@ This portfolio links to the following verified security projects:
 ---
 
 Designed & Built by **Kaif Tarasgar** © 2026
-*Securing the Digital World, One Byte at a Time.* 🛡️
+*Securing the Digital World, One Byte at a Time.*  🛡️
